@@ -4,8 +4,8 @@
   <meta http-equiv="content-type" content="txt/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous">
-  <title>短链</title>
-  <meta name="description" content="无服务器短链接">
+  <title>URL Shortener</title>
+  <meta name="description" content="URL Shortener Base On Worker">
   <style>
     * {
       margin: 0;
@@ -70,14 +70,14 @@
 </head>
 <body>
   <div class="card">
-    <h5 class="card-header">020短链</h5>
+    <h5 class="card-header">URL Shortener</h5>
     <div class="card-body">
       <form>
-      <h5 class="card-title">输入你的长链接：</h5>
+      <h5 class="card-title">Paste a long URL：</h5>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="示例: https://example.com/path?key=urlEncodedValue" id="text">
+        <input type="text" class="form-control" placeholder="" id="text">
         <div class="input-group-append">
-          <button class="btn btn-primary" type="submit" onclick='shorturl()' id="searchbtn">缩短</button>
+          <button class="btn btn-primary" type="submit" onclick='shorturl()' id="searchbtn">Shorten</button>
         </div>
       </div>    
       <div class="card-text">
