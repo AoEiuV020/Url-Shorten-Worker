@@ -1,15 +1,15 @@
 // 项目名，决定html从哪个项目获取，
 const github_repo = typeof(GITHUB_REPO)!="undefined" ? GITHUB_REPO
-    : 'AoEiuV020/Url-Shorten-Worker'
+    : 'woniu336/Url-Shorten-Worker'
 // 项目版本，cdn会有缓存，所以有更新时需要指定版本，
 const github_version = typeof(GITHUB_VERSION)!="undefined" ? GITHUB_VERSION
     : '@main'
 // 密码，密码正确情况无视白名单和超时设置，且支持自定义短链接，
 const password = typeof(PASSWORD)!="undefined" ? PASSWORD
-    : 'AoEiuV020 yes'
+    : 'BricRoot'
 // 短链超时，单位毫秒，支持整数乘法，0表示不设置超时，
 const shorten_timeout = typeof(SHORTEN_TIMEOUT)!="undefined" ? SHORTEN_TIMEOUT.split("*").reduce((a,b)=>parseInt(a)*parseInt(b),1)
-    : (1000 * 60 * 10)
+    : '0'
 // 默认短链key的长度，遇到重复时会自动延长，
 const default_len = typeof(DEFAULT_LEN)!="undefined" ? parseInt(DEFAULT_LEN)
     : 6
@@ -22,14 +22,11 @@ const remove_completely = typeof(REMOVE_COMPLETELY)!="undefined" ? REMOVE_COMPLE
 // 白名单中的域名无视超时，json数组格式，写顶级域名就可以，自动通过顶级域名和所有二级域名，
 const white_list = JSON.parse(typeof(WHITE_LIST)!="undefined" ? WHITE_LIST
     : `[
-"aoeiuv020.com",
-"aoeiuv020.cn",
-"aoeiuv020.cc",
-"020.name"
+""
     ]`)
 // 演示模式开启时网页上展示这段禁止滥用提示，并不需要明确表示什么时候失效，
 const demo_notice = typeof(DEMO_NOTICE)!="undefined" ? DEMO_NOTICE
-    : `注意：为防止示例服务被人滥用，故所有由demo网站生成的链接随时可能失效，如需长期使用请自行搭建。`
+    : `提示: 本站点所生成的链接与本人没有任何关系，想要自己搭建？<a href="https://github.com/AoEiuV020/Url-Shorten-Worker">点击转跳源代码</a>`
 //console.log(`${github_repo}, ${github_version}, ${password}, ${shorten_timeout}, ${demo_mode}, ${white_list}, ${demo_notice}`)
 const html404 = `<!DOCTYPE html>
 <body>
